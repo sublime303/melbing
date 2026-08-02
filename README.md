@@ -14,10 +14,11 @@
 
 # ⚓ Melbing Ship Log
 
-**Real-time sailing boat telemetry — ESP32 → Laravel → Dashboard**
+**Real-time sailing boat telemetry — ESP32 → Laravel or ASP.NET Core → Dashboard**
 
 [![PHP](https://img.shields.io/badge/PHP-8.5-777BB4?style=flat-square&logo=php&logoColor=white)](https://php.net)
 [![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat-square&logo=laravel&logoColor=white)](https://laravel.com)
+[![.NET](https://img.shields.io/badge/.NET-8-512BD4?style=flat-square&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com)
 [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://sqlite.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chart.js&logoColor=white)](https://www.chartjs.org)
@@ -28,7 +29,14 @@
 
 ## What is this?
 
-Melbing is a self-hosted telemetry server for a sailing boat. An **ESP32-S3** microcontroller on board reads sensors and sends data to this Laravel web server via HTTP POST requests. The server stores everything in a SQLite database and displays it on a live, dark-themed nautical dashboard.
+Melbing is a self-hosted telemetry server for a sailing boat. An **ESP32-S3** microcontroller on board reads sensors and sends data via HTTP POST. The server stores everything in a SQLite database and displays it on a live, dark-themed nautical dashboard.
+
+Two implementations share the same API contract:
+
+| App | Path | Stack |
+|---|---|---|
+| Laravel (original) | [`melbing-app/`](melbing-app/) | PHP 8.5 · Laravel 12 |
+| ASP.NET Core | [`melbing-csharp/`](melbing-csharp/) | .NET 8 · Razor Pages · EF Core |
 
 ```
 ┌──────────────────┐        HTTP POST        ┌──────────────────┐        ┌──────────────────┐
@@ -75,23 +83,26 @@ A dark, nautical-themed dashboard served at `/` showing:
 
 ## Quick Start
 
+### Laravel
+
 ```bash
 cd melbing-app
-
-composer install
-npm install
-
-cp .env.example .env
-php artisan key:generate
-
-touch database/database.sqlite
-php artisan migrate
-
-npm run build
-php artisan serve
+composer install && npm install
+cp .env.example .env && php artisan key:generate
+touch database/database.sqlite && php artisan migrate
+npm run build && php artisan serve
 ```
 
-Open **http://localhost:8000** in your browser.
+Open **http://localhost:8000**.
+
+### ASP.NET Core
+
+```bash
+cd melbing-csharp
+dotnet run
+```
+
+Open **http://localhost:5080**.
 
 ---
 
@@ -136,20 +147,19 @@ curl "http://localhost:8000/api/logs?hours=24"
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | PHP 8.5 · Laravel 12 · Laravel Boost |
-| Database | SQLite |
-| Frontend | Tailwind CSS v4 · Chart.js · Vite |
-| Hardware | ESP32-S3 · ArduinoJson · HTTPClient |
+| Layer | Laravel | C# |
+|---|---|---|
+| Backend | PHP 8.5 · Laravel 12 | .NET 8 · ASP.NET Core |
+| Database | SQLite | SQLite (EF Core) |
+| Frontend | Tailwind CSS v4 · Chart.js · Vite | Tailwind CDN · Chart.js |
+| Hardware | ESP32-S3 · ArduinoJson · HTTPClient | same |
 
 ---
 
 ## Full Documentation
 
-Detailed installation instructions, full API reference, database schema, curl test scripts, and an Arduino sketch snippet are in the app README:
-
-**[→ melbing-app/README.md](melbing-app/README.md)**
+- **[→ melbing-app/README.md](melbing-app/README.md)** — Laravel install, API, schema, Arduino snippet
+- **[→ melbing-csharp/README.md](melbing-csharp/README.md)** — ASP.NET Core quick start
 
 ---
 
