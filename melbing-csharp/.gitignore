@@ -486,3 +486,7 @@ $RECYCLE.BIN/
 # Local SQLite database
 Data/*.db
 Data/*.db-*
+
+# Local SQLite database (Web host)
+src/Melbing.ShipLog.Web/Data/*.db
+src/Melbing.ShipLog.Web/Data/*.db-*

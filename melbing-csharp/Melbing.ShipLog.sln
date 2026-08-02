@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{515C455A-483E-47D4-BEC9-C75D40242403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melbing.ShipLog.Tests", "tests\Melbing.ShipLog.Tests\Melbing.ShipLog.Tests.csproj", "{78078F66-300B-4C13-BE80-E0EA43B482EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B5C0ACDF-EEC7-4603-AD81-F5BB5748FC13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melbing.ShipLog.Domain", "src\Melbing.ShipLog.Domain\Melbing.ShipLog.Domain.csproj", "{98C8E4CB-57B9-4DD5-A10A-A918BF2F47FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melbing.ShipLog.Application", "src\Melbing.ShipLog.Application\Melbing.ShipLog.Application.csproj", "{FB3A848E-D6AF-4D7B-9D9E-F69DD560ED79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melbing.ShipLog.Infrastructure", "src\Melbing.ShipLog.Infrastructure\Melbing.ShipLog.Infrastructure.csproj", "{171029A2-486F-4B64-81C9-A904FFE4AA14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melbing.ShipLog.Web", "src\Melbing.ShipLog.Web\Melbing.ShipLog.Web.csproj", "{5EC47CC4-3989-466B-AF1F-79D8A7439B68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78078F66-300B-4C13-BE80-E0EA43B482EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78078F66-300B-4C13-BE80-E0EA43B482EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78078F66-300B-4C13-BE80-E0EA43B482EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78078F66-300B-4C13-BE80-E0EA43B482EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C8E4CB-57B9-4DD5-A10A-A918BF2F47FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C8E4CB-57B9-4DD5-A10A-A918BF2F47FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C8E4CB-57B9-4DD5-A10A-A918BF2F47FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C8E4CB-57B9-4DD5-A10A-A918BF2F47FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3A848E-D6AF-4D7B-9D9E-F69DD560ED79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3A848E-D6AF-4D7B-9D9E-F69DD560ED79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3A848E-D6AF-4D7B-9D9E-F69DD560ED79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3A848E-D6AF-4D7B-9D9E-F69DD560ED79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171029A2-486F-4B64-81C9-A904FFE4AA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171029A2-486F-4B64-81C9-A904FFE4AA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171029A2-486F-4B64-81C9-A904FFE4AA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171029A2-486F-4B64-81C9-A904FFE4AA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC47CC4-3989-466B-AF1F-79D8A7439B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC47CC4-3989-466B-AF1F-79D8A7439B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC47CC4-3989-466B-AF1F-79D8A7439B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC47CC4-3989-466B-AF1F-79D8A7439B68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78078F66-300B-4C13-BE80-E0EA43B482EC} = {515C455A-483E-47D4-BEC9-C75D40242403}
+		{98C8E4CB-57B9-4DD5-A10A-A918BF2F47FB} = {B5C0ACDF-EEC7-4603-AD81-F5BB5748FC13}
+		{FB3A848E-D6AF-4D7B-9D9E-F69DD560ED79} = {B5C0ACDF-EEC7-4603-AD81-F5BB5748FC13}
+		{171029A2-486F-4B64-81C9-A904FFE4AA14} = {B5C0ACDF-EEC7-4603-AD81-F5BB5748FC13}
+		{5EC47CC4-3989-466B-AF1F-79D8A7439B68} = {B5C0ACDF-EEC7-4603-AD81-F5BB5748FC13}
+	EndGlobalSection
+EndGlobal

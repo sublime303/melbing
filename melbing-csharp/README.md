@@ -13,6 +13,16 @@ This is a C# port of the Laravel app in `../melbing-app`, with the same HTTP API
 └──────────────────┘                         └──────────────────┘        └──────────────────┘
 ```
 
+## Solution structure
+
+| Project | Responsibility |
+|---|---|
+| `src/Melbing.ShipLog.Domain` | Entities |
+| `src/Melbing.ShipLog.Application` | DTOs, service interfaces, business logic |
+| `src/Melbing.ShipLog.Infrastructure` | EF Core / SQLite, repository |
+| `src/Melbing.ShipLog.Web` | Minimal APIs, Razor Pages, host |
+| `tests/Melbing.ShipLog.Tests` | Unit + integration tests |
+
 ## Requirements
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
@@ -27,12 +37,21 @@ sudo pacman -S dotnet-sdk-8.0 aspnet-runtime-8.0 aspnet-targeting-pack-8.0
 
 ```bash
 cd melbing-csharp
-dotnet run
+dotnet run --project src/Melbing.ShipLog.Web
 ```
 
 Open **http://localhost:5080** in your browser.
 
-The SQLite database is created automatically at `Data/shiplog.db`.
+The SQLite database is created automatically at `src/Melbing.ShipLog.Web/Data/shiplog.db`.
+
+## Tests
+
+```bash
+cd melbing-csharp
+dotnet test
+```
+
+Integration tests cover `POST /api/log`, `GET /api/logs`, the dashboard page, ESP32-style bool parsing (`0`/`1`), and battery colour helpers. Unit tests cover `ShipLogService` with a fake repository.
 
 ## API
 

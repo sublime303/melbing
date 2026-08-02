@@ -1,24 +1,21 @@
-using Melbing.ShipLog.Data;
+using Melbing.ShipLog.Application.Abstractions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 
-namespace Melbing.ShipLog.Pages;
+namespace Melbing.ShipLog.Web.Pages;
 
-public class IndexModel(ShipLogDbContext db) : PageModel
+public class IndexModel(IShipLogService shipLogService) : PageModel
 {
-    public Models.ShipLog? Latest { get; private set; }
-    public Models.ShipLog? FirstRecord { get; private set; }
+    public ShipLogEntity? Latest { get; private set; }
+    public ShipLogEntity? FirstRecord { get; private set; }
     public int TotalRecords { get; private set; }
 
     public async Task OnGetAsync(CancellationToken cancellationToken)
     {
-        TotalRecords = await db.ShipLogs.CountAsync(cancellationToken);
-        Latest = await db.ShipLogs
-            .OrderByDescending(l => l.UnixTime)
-            .FirstOrDefaultAsync(cancellationToken);
-        FirstRecord = await db.ShipLogs
-            .OrderBy(l => l.UnixTime)
-            .FirstOrDefaultAsync(cancellationToken);
+        var snapshot = await shipLogService.GetDashboardAsync(cancellationToken);
+        TotalRecords = snapshot.TotalRecords;
+        Latest = snapshot.Latest;
+        FirstRecord = snapshot.FirstRecord;
     }
 
     public static string FormatRelative(long unixTime)
