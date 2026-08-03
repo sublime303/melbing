@@ -27,6 +27,7 @@ Application must **not** reference Infrastructure. Domain must **not** reference
 ## Naming and project layout
 
 - Put service/repository contracts in **`Interfaces/`**, not `Abstractions/`.
+- Put application services in **`Service/`** (not `Contracts/`). Name service types with a **`Service` suffix** (e.g. `ShipLogService`, `IShipLogService`).
 - Put request/response DTOs under **Domain** (`Domain/Dtos/`), not Application.
 - Register Application services in **`Program.cs`** for this small app. Do not add an `AddApplication()` DI helper in the Application project. Infrastructure may keep `AddInfrastructure()` when it wires EF and repositories.
 

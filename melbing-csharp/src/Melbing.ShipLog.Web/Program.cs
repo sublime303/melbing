@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Text.Json.Serialization;
 using Melbing.ShipLog.Application.Interfaces;
-using Melbing.ShipLog.Application.Services;
+using Melbing.ShipLog.Application.Service;
 using Melbing.ShipLog.Domain.Dtos;
 using Melbing.ShipLog.Infrastructure;
 using Melbing.ShipLog.Infrastructure.Data;

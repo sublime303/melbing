@@ -1,6 +1,6 @@
 using Melbing.ShipLog.Application.Interfaces;
 using Melbing.ShipLog.Domain.Dtos;
-using Melbing.ShipLog.Application.Services;
+using Melbing.ShipLog.Application.Service;
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 
 namespace Melbing.ShipLog.Tests;

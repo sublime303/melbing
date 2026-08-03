@@ -3,7 +3,7 @@ using Melbing.ShipLog.Application.Interfaces;
 using Melbing.ShipLog.Domain.Dtos;
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 
-namespace Melbing.ShipLog.Application.Services;
+namespace Melbing.ShipLog.Application.Service;
 
 public sealed class ShipLogService(IShipLogRepository repository) : IShipLogService
 {

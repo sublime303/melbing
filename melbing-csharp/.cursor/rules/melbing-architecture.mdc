@@ -10,7 +10,7 @@ Follow [GUIDELINES.md](../../GUIDELINES.md). Summary:
 ## Layers
 
 - **Domain** — entities and DTOs (`Dtos/`)
-- **Application** — services, `Interfaces/` (not Abstractions), validation
+- **Application** — `Service/` (*Service suffix), `Interfaces/` (not Abstractions), validation
 - **Infrastructure** — DB, repositories, serialization adapters (ESP32 bools, etc.)
 - **Web** — HTTP, Razor, `Program.cs` DI for Application services
 
@@ -19,6 +19,7 @@ Dependencies: `Web → Infrastructure → Application → Domain`. Never reverse
 ## Conventions
 
 - Folder name for contracts: **`Interfaces`**, not `Abstractions`.
+- Application services live in **`Service/`** (not `Contracts/`); type names end with **`Service`**.
 - DTOs live in **Domain**, not Application.
 - No `AddApplication()` helper — register Application services in `Program.cs` in this small app.
 - Keep DbContext mapping inline until there is more than one entity; then extract configs.
