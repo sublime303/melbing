@@ -1,6 +1,6 @@
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 
-namespace Melbing.ShipLog.Application.Contracts;
+namespace Melbing.ShipLog.Domain.Dtos;
 
 public sealed class DashboardSnapshot
 {

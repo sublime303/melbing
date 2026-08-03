@@ -1,4 +1,4 @@
-namespace Melbing.ShipLog.Application.Contracts;
+namespace Melbing.ShipLog.Domain.Dtos;
 
 public sealed class CreateShipLogResult
 {

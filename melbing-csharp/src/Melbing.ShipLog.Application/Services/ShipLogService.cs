@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using Melbing.ShipLog.Application.Abstractions;
-using Melbing.ShipLog.Application.Contracts;
+using Melbing.ShipLog.Application.Interfaces;
+using Melbing.ShipLog.Domain.Dtos;
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 
 namespace Melbing.ShipLog.Application.Services;

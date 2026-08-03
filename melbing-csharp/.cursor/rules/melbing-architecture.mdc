@@ -9,18 +9,21 @@ Follow [GUIDELINES.md](../../GUIDELINES.md). Summary:
 
 ## Layers
 
-- **Domain** — entities only
-- **Application** — use cases, DTOs, interfaces, validation (no EF/SQLite/JSON converters)
+- **Domain** — entities and DTOs (`Dtos/`)
+- **Application** — services, `Interfaces/` (not Abstractions), validation
 - **Infrastructure** — DB, repositories, serialization adapters (ESP32 bools, etc.)
-- **Web** — HTTP, Razor, host registration
+- **Web** — HTTP, Razor, `Program.cs` DI for Application services
 
 Dependencies: `Web → Infrastructure → Application → Domain`. Never reverse. Application must not reference Infrastructure.
 
-## Placement
+## Conventions
 
-- Technical adapters (persistence, external JSON formats) go in **Infrastructure**, even if they contain “logic”.
-- Register adapters from Web (`AddEsp32Converters()`, DI), do not hang Infrastructure types on Application DTOs.
-- Gray zones: choose deliberately; prefer a thinner Application and push technical detail out.
+- Folder name for contracts: **`Interfaces`**, not `Abstractions`.
+- DTOs live in **Domain**, not Application.
+- No `AddApplication()` helper — register Application services in `Program.cs` in this small app.
+- Keep DbContext mapping inline until there is more than one entity; then extract configs.
+- Technical adapters go in Infrastructure; register converters from Web.
+- Prefer branch-standard simplicity over enterprise ceremony for this size of app.
 
 ## ESP32 contract
 

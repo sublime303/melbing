@@ -1,5 +1,5 @@
-using Melbing.ShipLog.Application.Abstractions;
-using Melbing.ShipLog.Application.Contracts;
+using Melbing.ShipLog.Application.Interfaces;
+using Melbing.ShipLog.Domain.Dtos;
 using Melbing.ShipLog.Application.Services;
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 

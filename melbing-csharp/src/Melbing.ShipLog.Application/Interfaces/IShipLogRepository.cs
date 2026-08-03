@@ -1,6 +1,6 @@
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 
-namespace Melbing.ShipLog.Application.Abstractions;
+namespace Melbing.ShipLog.Application.Interfaces;
 
 public interface IShipLogRepository
 {

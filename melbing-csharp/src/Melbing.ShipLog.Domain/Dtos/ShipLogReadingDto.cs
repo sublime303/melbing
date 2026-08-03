@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Melbing.ShipLog.Application.Contracts;
+namespace Melbing.ShipLog.Domain.Dtos;
 
 public sealed class ShipLogReadingDto
 {

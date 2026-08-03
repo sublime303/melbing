@@ -1,8 +1,8 @@
 using System.Globalization;
 using System.Text.Json.Serialization;
-using Melbing.ShipLog.Application;
-using Melbing.ShipLog.Application.Abstractions;
-using Melbing.ShipLog.Application.Contracts;
+using Melbing.ShipLog.Application.Interfaces;
+using Melbing.ShipLog.Application.Services;
+using Melbing.ShipLog.Domain.Dtos;
 using Melbing.ShipLog.Infrastructure;
 using Melbing.ShipLog.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +13,7 @@ CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
-builder.Services.AddApplication();
+builder.Services.AddScoped<IShipLogService, ShipLogService>();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.ConfigureHttpJsonOptions(options =>

@@ -1,6 +1,6 @@
-using Melbing.ShipLog.Application.Contracts;
+using Melbing.ShipLog.Domain.Dtos;
 
-namespace Melbing.ShipLog.Application.Abstractions;
+namespace Melbing.ShipLog.Application.Interfaces;
 
 public interface IShipLogService
 {

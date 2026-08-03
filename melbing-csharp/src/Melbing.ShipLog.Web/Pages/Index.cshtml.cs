@@ -1,4 +1,4 @@
-using Melbing.ShipLog.Application.Abstractions;
+using Melbing.ShipLog.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;
 

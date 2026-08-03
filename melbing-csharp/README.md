@@ -17,10 +17,10 @@ This is a C# port of the Laravel app in `../melbing-app`, with the same HTTP API
 
 | Project | Responsibility |
 |---|---|
-| `src/Melbing.ShipLog.Domain` | Entities |
-| `src/Melbing.ShipLog.Application` | DTOs, service interfaces, business logic |
+| `src/Melbing.ShipLog.Domain` | Entities, DTOs |
+| `src/Melbing.ShipLog.Application` | Services, interfaces, business logic |
 | `src/Melbing.ShipLog.Infrastructure` | EF Core / SQLite, repository, JSON serialization adapters |
-| `src/Melbing.ShipLog.Web` | Minimal APIs, Razor Pages, host |
+| `src/Melbing.ShipLog.Web` | Minimal APIs, Razor Pages, host / DI wiring |
 | `tests/Melbing.ShipLog.Tests` | Unit + integration tests |
 
 See [GUIDELINES.md](GUIDELINES.md) for Melbing’s layering and placement preferences.

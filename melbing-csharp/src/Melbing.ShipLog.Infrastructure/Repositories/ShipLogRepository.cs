@@ -1,4 +1,4 @@
-using Melbing.ShipLog.Application.Abstractions;
+using Melbing.ShipLog.Application.Interfaces;
 using Melbing.ShipLog.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using ShipLogEntity = Melbing.ShipLog.Domain.Entities.ShipLog;

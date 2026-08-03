@@ -1,5 +1,5 @@
 using System.Text.Json;
-using Melbing.ShipLog.Application.Abstractions;
+using Melbing.ShipLog.Application.Interfaces;
 using Melbing.ShipLog.Infrastructure.Data;
 using Melbing.ShipLog.Infrastructure.Repositories;
 using Melbing.ShipLog.Infrastructure.Serialization;
