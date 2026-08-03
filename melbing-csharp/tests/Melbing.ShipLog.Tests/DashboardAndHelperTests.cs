@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text;
 using System.Text.Json;
-using Melbing.ShipLog.Application.Serialization;
+using Melbing.ShipLog.Infrastructure.Serialization;
 using Melbing.ShipLog.Web.Pages;
 
 namespace Melbing.ShipLog.Tests;

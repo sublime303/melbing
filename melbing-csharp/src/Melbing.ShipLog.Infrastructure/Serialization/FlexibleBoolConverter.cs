@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Melbing.ShipLog.Application.Serialization;
+namespace Melbing.ShipLog.Infrastructure.Serialization;
 
 /// <summary>
 /// Accepts JSON booleans as true/false, 0/1, or "0"/"1" (ESP32 / ArduinoJson style).

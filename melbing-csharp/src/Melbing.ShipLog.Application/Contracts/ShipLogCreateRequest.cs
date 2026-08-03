@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using Melbing.ShipLog.Application.Serialization;
 
 namespace Melbing.ShipLog.Application.Contracts;
 
@@ -35,7 +34,6 @@ public sealed class ShipLogCreateRequest
     public float? StartBatV { get; set; }
 
     [JsonPropertyName("shore_power")]
-    [JsonConverter(typeof(FlexibleNullableBoolConverter))]
     public bool? ShorePower { get; set; }
 
     [JsonPropertyName("wind_speed")]
@@ -48,23 +46,18 @@ public sealed class ShipLogCreateRequest
     public float? TrueWindAngle { get; set; }
 
     [JsonPropertyName("heating_element")]
-    [JsonConverter(typeof(FlexibleNullableBoolConverter))]
     public bool? HeatingElement { get; set; }
 
     [JsonPropertyName("dehumidifier")]
-    [JsonConverter(typeof(FlexibleNullableBoolConverter))]
     public bool? Dehumidifier { get; set; }
 
     [JsonPropertyName("battery_charger")]
-    [JsonConverter(typeof(FlexibleNullableBoolConverter))]
     public bool? BatteryCharger { get; set; }
 
     [JsonPropertyName("solar_charger")]
-    [JsonConverter(typeof(FlexibleNullableBoolConverter))]
     public bool? SolarCharger { get; set; }
 
     [JsonPropertyName("daylight_saving")]
-    [JsonConverter(typeof(FlexibleNullableBoolConverter))]
     public bool? DaylightSaving { get; set; }
 
     [MaxLength(50)]

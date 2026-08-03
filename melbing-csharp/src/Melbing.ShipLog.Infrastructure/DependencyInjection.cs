@@ -1,6 +1,8 @@
+using System.Text.Json;
 using Melbing.ShipLog.Application.Abstractions;
 using Melbing.ShipLog.Infrastructure.Data;
 using Melbing.ShipLog.Infrastructure.Repositories;
+using Melbing.ShipLog.Infrastructure.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,5 +24,18 @@ public static class DependencyInjection
         services.AddScoped<IShipLogRepository, ShipLogRepository>();
 
         return services;
+    }
+}
+
+public static class JsonSerializerConfiguration
+{
+    /// <summary>
+    /// Registers ESP32-compatible JSON converters (flexible bools as 0/1).
+    /// </summary>
+    public static JsonSerializerOptions AddEsp32Converters(this JsonSerializerOptions options)
+    {
+        options.Converters.Add(new FlexibleBoolConverter());
+        options.Converters.Add(new FlexibleNullableBoolConverter());
+        return options;
     }
 }
