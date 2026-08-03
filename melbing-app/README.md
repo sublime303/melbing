@@ -4,7 +4,7 @@ A Laravel web application that receives sensor data from an ESP32-S3 on a sailin
 
 ## Tech Stack
 
-- **PHP 8.5 / Laravel 12**
+- **PHP 8.3+ / Laravel 13**
 - **Laravel Boost** — project tooling & guidelines
 - **SQLite** — database
 - **Tailwind CSS v4** — styling
@@ -15,7 +15,7 @@ A Laravel web application that receives sensor data from an ESP32-S3 on a sailin
 
 ## Requirements
 
-- PHP 8.2+
+- PHP 8.3+
 - Composer
 - Node.js 18+ & npm
 

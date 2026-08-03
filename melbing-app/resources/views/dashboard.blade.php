@@ -277,7 +277,7 @@ async function loadCharts(hours) {
     document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('btn-' + hours)?.classList.add('active');
 
-    const res  = await fetch(`/api/logs?hours=${hours}`);
+    const res  = await fetch(`{{ route('api.logs.index') }}?hours=${hours}`);
     const data = await res.json();
 
     if (!data.length) {

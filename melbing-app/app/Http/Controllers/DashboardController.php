@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\ShipLog;
+use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        $latest = ShipLog::orderByDesc('unix_time')->first();
+        $latest = ShipLog::query()->orderByDesc('unix_time')->first();
 
-        $totalRecords = ShipLog::count();
-        $firstRecord  = ShipLog::orderBy('unix_time')->first();
+        $totalRecords = ShipLog::query()->count();
+        $firstRecord = ShipLog::query()->orderBy('unix_time')->first();
 
         return view('dashboard', compact('latest', 'totalRecords', 'firstRecord'));
     }
