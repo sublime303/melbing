@@ -23,6 +23,8 @@ This is a C# port of the Laravel app in `../melbing-app`, with the same HTTP API
 | `src/Melbing.ShipLog.Web` | Minimal APIs, Razor Pages, host |
 | `tests/Melbing.ShipLog.Tests` | Unit + integration tests |
 
+See [GUIDELINES.md](GUIDELINES.md) for Melbing’s layering and placement preferences.
+
 ## Requirements
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
